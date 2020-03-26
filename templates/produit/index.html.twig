@@ -1,0 +1,75 @@
+{% extends 'formsbase.html.twig' %}
+
+{% block title %}Hello ProduitController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="dashboard-wrapper">
+		<div class="container-fluid dashboard-content">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="row">
+						<!-- ============================================================== -->
+						<!-- fixed header  -->
+						<!-- ============================================================== -->
+							{% for message in app.flashes('success') %}
+								<div class="alert alert-success"> {{ message }}
+							</div>
+						{% endfor %}
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="mb-0"> {{titre}} </h5>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive">
+										<table id="example4" class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Nom du Produit</th>
+													<th>Code à barres</th>
+													<th>Qte</th>
+													<th>Emplacement</th>
+
+												</tr>
+											</thead>
+											<tbody>
+												{% for produit in produits %}
+													<tr>
+														<td>{{produit.id}}</td>
+														<td>{{produit.nom}}</td>
+														<td>{{produit.referance}}</td>
+														<td>{{produit.quantite}}</td>
+														<td>{{produit.emplacement}}</td>
+														<td><a class="" href="{{path('edit_produit', { 'id': produit.id })}}">edit</a></td>
+													</tr>
+												{% endfor %}
+
+											</tbody>
+											<tfoot></tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ============================================================== -->
+					<!-- end fixed header  -->
+						<!-- ============================================================== -->
+					</div>
+
+
+				</div>
+			</div>
+			<!-- ============================================================== -->
+		<!-- footer -->
+			<!-- ============================================================== -->
+
+			<!-- ============================================================== -->
+			<!-- end footer -->
+			<!-- ============================================================== -->
+		</div>
+	</div>
+
+{% endblock %}

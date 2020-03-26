@@ -1,89 +1,89 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Se7en{% endblock %}</title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css"
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/home">Se7en</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link" >Commande</a>
-                    <div class="dropdown-content">
-						<a href="#">Ajouter une Commande</a>
-						<a href="#">Annuler une Commande</a>
-						<a href="#">Historique des commandes</a>
-					</div>
-                </li>
-            <li class="nav-item dropdown">
-               <a class="nav-link" >Inventaire</a>
-                    <div class="dropdown-content">
-						<a href="/products">Afficher l'inventaire</a>
-						<a href="/AddProducts">Ajouter un produit</a>
-					</div>
-                </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" >Fournisseurs</a>
-                    <div class="dropdown-content">
-                        <a href="#">Gérer les bons de commandes</a>
-						<a href="#">Ajouter un bon de commande</a>
-                        <a href="#">Gérer les bons de retour de commandes</a>
-						<a href="#">Information des fournisseurs</a>
-                    </div>
-                </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" >Clients</a>
-                    <div class="dropdown-content">
-                    <a href="#">Afficher la liste des clients</a>
-                    <a href="#">Ajouter un client à la Blacklist</a>
-                    </div>
-                </li>
-             <li class="nav-item dropdown">
-                <a class="nav-link" >Prestataires</a>
-                    <div class="dropdown-content">
-                    <a href="">Gerer les états d'envoie</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        </nav>
-        <div class="container">
-        {% block body %}{% endblock body %}
-        </div>
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Batolis
+			{% block title %}{% endblock %}
+		</title>
+		<meta name="description" content="">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <link rel="manifest" href="site.webmanifest"> -->
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
+		<!-- Place favicon.ico in the root directory -->
+		<link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
+
+		<link
+		href="{{asset('css/main.css')}}" rel="stylesheet" media="all">
+
+		<!-- CSS here -->
+		<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
+		<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+		<link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+		<link rel="stylesheet" href="{{asset('css/gijgo.css')}}">
+		<link rel="stylesheet" href="{{asset('css/animate.css')}}">
+		<link rel="stylesheet" href="{{asset('css/slick.css')}}">
+		<link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="{{asset('css/style.css')}}">
+		<!-- <link rel="stylesheet" href="css/responsive.css"> -->
+		{% block stylesheets %}{% endblock %}
+
+	</head>
+
+	<body class="bg">
+
+		{% include "header.html.twig" %}
+		{% block body %}{% endblock %}
+
+		<!-- JS here -->
+        <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"> </script>
+		<script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+		<script src="{{asset('js/popper.min.js')}}"></script>
+		<script src="{{asset('js/bootstrap.min.js')}}"></script>
+		<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+		<script src="{{asset('js/ajax-form.js')}}"></script>
+		<script src="{{asset('js/waypoints.min.js')}}"></script>
+		<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+		<script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
+		<script src="{{asset('js/scrollIt.js')}}"></script>
+		<script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
+		<script src="{{asset('js/wow.min.js')}}"></script>
+		<script src="{{asset('js/nice-select.min.js')}}"></script>
+		<script src="{{asset('js/jquery.slicknav.min.js')}}"></script>
+		<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{asset('js/plugins.js')}}"></script>
+		<script src="{{asset('js/gijgo.min.js')}}"></script>
+		<script src="{{asset('js/slick.min.js')}}"></script>
+
+
+		<!--contact js-->
+		<script src="{{asset('js/contact.js')}}"></script>
+		<script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+		<script src="{{asset('js/jquery.form.js')}}"></script>
+		<script src="{{asset('js/jquery.validate.min.js')}}"></script>
+		<script src="{{asset('js/mail-script.js')}}"></script>
+		<script src="{{asset('js/newsletter-script.js')}}"></script>
+
+
+		<script src="{{asset('js/main.js')}}"></script>
+		<script>
+			$('#datepicker').datepicker({
+iconsLibrary: 'fontawesome',
+icons: {
+rightIcon: '<span class="fa fa-caret-down"></span>'
+}
+});
+		</script>
+		{% block javascripts %}{% endblock %}
+
+	</body>
+
 </html>
-
-
-<style>
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #FF7F50;
-min-width: 160px;
-z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-color: white;
-padding: 10px 14px;
-text-decoration: none;
-display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #FF7F50;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-</style>

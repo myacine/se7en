@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class TestController extends AbstractController
 {
     /**
-     * @Route("/test", name="test")
+     * @Route("/erp/test", name="test")
      */
     public function index(Request $request)
     {
@@ -27,7 +27,8 @@ class TestController extends AbstractController
             $entityManager->flush();
         }
         return $this->render('test/index.html.twig', [
-            'controller_name' => 'TestController', 'form' => $form->createView()
+            'controller_name' => 'TestController', 
+            'form' => $form->createView()
         ]);
     }
 }

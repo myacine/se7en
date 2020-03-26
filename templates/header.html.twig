@@ -1,0 +1,53 @@
+<!--[if lte IE 9]>
+            
+        <![endif]-->
+
+<!-- header-start -->
+<header>
+
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="{{path('home')}}">
+                                    <img src="{{asset('img/Logo.png')}}" alt="Batolis Logo" style="max-width: 100px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="dropdown-header" href="#">Stock</a>
+                                            <ul class="submenu">
+                                                <li><a class="" href="{{path('produit')}}">Afficher les produits</a></li>
+                                                <li><a class="" href="{{path('add_produit')}}">Ajouter un produit</a><li>
+                                                <li><a class="" href="{{path('add_emplacement')}}">Ajouter un emplacement</a><li>
+                                                <li><a class="" href="{{path('soldout_produit')}}">Produits  en repture de stock</a><li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Commandes</a></li>
+                                        <li><a class="" href="#">Déstination</a>
+                                            <ul class="submenu">
+                                                test
+                                            </ul>
+                                        </li>
+                                            <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
