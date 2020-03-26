@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class EmplacementController extends AbstractController
 {
     /**
-     * @Route("/home/emplacement/add", name="add_emplacement")
+     * @Route("/admin/emplacement/add", name="add_emplacement")
      */
     public function add(Request $request)
     {

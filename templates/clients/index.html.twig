@@ -1,0 +1,91 @@
+{% extends 'formsbase.html.twig' %}
+
+{% block title %}Hello clientsController!
+{% endblock %}
+
+{% block body %}
+
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- fixed header  -->
+                    <!-- ============================================================== -->
+                    {% for message in app.flashes('success') %}
+                    <div class="alert alert-success"> {{ message }}
+                    </div>
+                    {% endfor %}
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    {{titre}}
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example" class="table  table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+                                                <th>Téléphone</th>
+                                                <th>Mobile</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for client in clients %}
+
+                                            <tr class="{% if client.blocked == 1 %}table-danger{% endif %}">
+                                                <th>{{client.id}}</th>
+                                                <td>{{client.nom}}
+                                                </td>
+                                                <td>{{client.prenom}}
+                                                </td>
+                                                <td>{{client.telephone}}
+                                                </td>
+                                                <td>{{client.mobile}}
+                                                </td>
+                                                <th scope="row">
+                                                    {% if client.blocked == 1 %}<a class=""
+                                                        href="{{path('black_list_clients', { 'id': client.id })}}">Plus</a>
+                                                    {% else %}<a class=""
+                                                        href="{{path('black_list_clients', { 'id': client.id })}}">Black
+                                                        lister</a> {% endif %}
+                                                    </a>
+                                                </th>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+                                                <th>Téléphone</th>
+                                                <th>Mobile</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end fixed header  -->
+                    <!-- ============================================================== -->
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

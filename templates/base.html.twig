@@ -75,12 +75,19 @@
 
 		<script src="{{asset('js/main.js')}}"></script>
 		<script>
+		$('#showPass').click(function () {
+           	if ($('#batolisPass').attr('type') == 'password') {
+            	$('#batolisPass').attr('type', 'text');
+            } else {
+            	$('#batolisPass').attr('type', 'password');
+            }
+            });
 			$('#datepicker').datepicker({
-iconsLibrary: 'fontawesome',
-icons: {
-rightIcon: '<span class="fa fa-caret-down"></span>'
-}
-});
+				iconsLibrary: 'fontawesome',
+				icons: {
+				rightIcon: '<span class="fa fa-caret-down"></span>'
+				}
+				});
 		</script>
 		{% block javascripts %}{% endblock %}
 

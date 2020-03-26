@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,16 @@ class Produit
      * @ORM\OneToOne(targetEntity="App\Entity\Emplacement", inversedBy="produit", cascade={"persist", "remove"})
      */
     private $emplacement;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Bcommande", mappedBy="produit")
+     */
+    private $bcommandes;
+
+    public function __construct()
+    {
+        $this->bcommandes = new ArrayCollection();
+    }
 
     public function __tostring(){
         return $this->nom;
@@ -89,6 +101,37 @@ class Produit
     public function setEmplacement(?emplacement $emplacement): self
     {
         $this->emplacement = $emplacement;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Bcommande[]
+     */
+    public function getBcommandes(): Collection
+    {
+        return $this->bcommandes;
+    }
+
+    public function addBcommande(Bcommande $bcommande): self
+    {
+        if (!$this->bcommandes->contains($bcommande)) {
+            $this->bcommandes[] = $bcommande;
+            $bcommande->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBcommande(Bcommande $bcommande): self
+    {
+        if ($this->bcommandes->contains($bcommande)) {
+            $this->bcommandes->removeElement($bcommande);
+            // set the owning side to null (unless already changed)
+            if ($bcommande->getProduit() === $this) {
+                $bcommande->setProduit(null);
+            }
+        }
 
         return $this;
     }
