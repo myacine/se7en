@@ -17,7 +17,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6">
+                        <div class="col-md-10">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
@@ -30,7 +30,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="#">Commandes</a></li>
-                                        <li><a class="" href="#">Déstination</a>
+                                        <li><a class="" href="#">Fournisseurs</a>
                                             <ul class="submenu">
                                                 test
                                             </ul>
@@ -38,15 +38,22 @@
                                         <li><a class="dropdown-header" href="#">Clients</a>
                                             <ul class="submenu">
                                                 <li><a class="" href="{{path('clients')}}">Lister les clients</a></li>
-                                                <li><a class="" href="{{path('black_list_clients')}}">Black-lister un client</a><li>
+                                                <li><a class="" href="{{path('find_black_list_clients')}}">Black-lister un client</a><li>
                                             </ul>
                                         </li>
+                                        <li><a class="" href="#">Prestataires</a></li>
+                                        
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                            
+                                                <li style="float: right;" ><a class="dropdown-header"  href="#">{{app.user.Username}}</a>
+                                                    <ul class="submenu">
+                                                        <li><a class="" href="{{path('app_logout')}}">Se déconnecter</a></li>
+                                                    </ul>
+                                                </li>
+                                        {% endif %}
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
                 </div>

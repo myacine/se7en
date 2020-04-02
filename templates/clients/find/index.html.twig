@@ -11,10 +11,15 @@
 				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 					<div class="row">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
+							{% for message in app.flashes('error') %}
+								<div class="alert alert-danger">
+									{{ message }}
+								</div>
+							{% endfor %}
 							<!-- basic form  -->
 							<!-- ============================================================== -->
-								<div class="row"> <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6  mx-auto text-center form p-4">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6  mx-auto text-center form p-4">
 									<div class="card">
 										<div class="card-header">
 											<h5 class="mb-0">
@@ -28,76 +33,6 @@
 										</div>
 										<button type="submit" class="btn btn-primary">Enregistrer</button>
 										{{ form_end(form) }}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="dashboard-wrapper">
-		<div class="container-fluid dashboard-content">
-			<div class="row">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-					<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-									<div class="card">
-										{% if client is defined and edit_form is defined %}
-											<div class="card-header">
-												<h5 class="mb-0">
-													Black lister un client
-												</h5>
-											</div>
-											
-										<div class="card-body">
-											{{ form_start(edit_form, { 'attr': {'class': ''}}) }}
-											<div class="form-group">
-												<label class="col-form-label">nom</label>
-												{{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control', 'value' : client.nom}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">prenom</label>
-												{{ form_widget(edit_form.prenom, { 'attr': {'class': 'form-control', 'value' : client.prenom}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">telephone</label>
-												{{ form_widget(edit_form.telephone, { 'attr': {'class': 'form-control', 'value' : client.telephone}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">mobile</label>
-												{{ form_widget(edit_form.mobile, { 'attr': {'class': 'form-control', 'value' : client.mobile}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">adrresse</label>
-												{{ form_widget(edit_form.adrresse, { 'attr': {'class': 'form-control', 'value' : client.adrresse}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">ville</label>
-												{{ form_widget(edit_form.ville, { 'attr': {'class': 'form-control', 'value' : client.ville}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">wilaya</label>
-												{{ form_widget(edit_form.wilaya, { 'attr': {'class': 'form-control', 'value' : client.wilaya}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">Blocked</label>
-												{{ form_widget(edit_form.Blocked, { 'attr': {'class': 'form-control', 'value' : client.Blocked}}) }}
-											</div>
-											<div class="form-group">
-												<label class="col-form-label">raison</label>
-												{{ form_widget(edit_form.raison, { 'attr': {'class': 'form-control', 'value' : client.raison}}) }}
-											</div>
-											<a class="" href="{{path('produit')}}">annuler</a>
-											<button type="submit" class="btn btn-primary">Enregistrer</button>
-											{{ form_end(form) }}
-										</div>
-
-										{% endif %}
 									</div>
 								</div>
 							</div>
